@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>CF Virtual Contest</title>
+	<link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+	<div id="app">
+		<header>
+			<h1>CF Virtual Contest</h1>
+		</header>
+		<main>
+			<section id="view-start" class="view">
+				<div class="field">
+					<label>Codeforces handle</label>
+					<input id="handle" placeholder="tourist" />
+				</div>
+				<div class="field grid">
+					<div>
+						<label>Hours</label>
+						<input id="hours" type="number" min="0" max="3" value="1" />
+					</div>
+					<div>
+						<label>Minutes</label>
+						<input id="minutes" type="number" min="0" max="59" value="30" />
+					</div>
+					<div>
+						<label># Problems</label>
+						<input id="numProblems" type="number" min="1" max="10" value="4" />
+					</div>
+				</div>
+				<div class="field">
+					<label>Contest Type</label>
+					<select id="contestType">
+						<option value="general">General</option>
+						<option value="topic">Topic-based</option>
+						<option value="mixed">Mixed</option>
+					</select>
+				</div>
+				<div class="field">
+					<label>Difficulty</label>
+					<select id="difficulty">
+						<option value="general">General</option>
+						<option value="easy">Easy (800–1200)</option>
+						<option value="medium">Medium (1300–1600)</option>
+						<option value="hard">Hard (1700–2000)</option>
+						<option value="veryhard">Very Hard (2100+)</option>
+					</select>
+				</div>
+				<div class="field">
+					<label>Tags (comma separated, optional)</label>
+					<input id="tags" placeholder="dp, graphs, math" />
+				</div>
+				<button id="startBtn">Start Contest</button>
+			</section>
+
+			<section id="view-contest" class="view hidden">
+				<div class="timer">
+					<span id="countdown"></span>
+				</div>
+				<div id="contestDetails"></div>
+				<ol id="problems"></ol>
+				<button id="showResultsBtn" class="hidden">Show Results</button>
+			</section>
+
+			<section id="view-results" class="view hidden">
+				<h2>Results</h2>
+				<div id="resultsSummary"></div>
+				<button id="backStartBtn">New Contest</button>
+			</section>
+		</main>
+	</div>
+	<script src="popup.js" type="module"></script>
+</body>
+</html>

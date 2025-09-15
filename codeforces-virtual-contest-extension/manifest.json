@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Codeforces Custom Virtual Contest",
+  "description": "Create custom virtual contests from Codeforces problems with progress tracking and results.",
+  "version": "0.1.0",
+  "action": {
+    "default_title": "CF Virtual Contest",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://codeforces.com/*",
+    "https://codeforces.com/api/*"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  }
+}
